@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link rel="stylesheet" href="css/Fontawesome.css">
+
+<style>
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+    font-family: 'open sans',sans-serif;
+    font-weight: 400;
+    
+}
+::-webkit-input-placeholder
+{
+    color: #cbcbcb;
+}
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color:#f8f8f8;
+}
+
+.container
+{ 
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    
+}
+section .container .logo
+{
+    position: relative;
+    margin-left: 69px;
+    top: 65px;
+    
+}
+section .container .logo 
+{
+    color:#1900b4;
+    font-size: 19px;
+    cursor: pointer;
+}
+section .container .logo i
+{
+    font-size: 22px;
+}
+section .container .logo:after{
+
+content: "";
+position: absolute;
+width: 40px;
+height: 40px;
+border-radius: 12px;
+top: -8px;
+left: -8px;
+box-shadow: inset -2px -2px 6px rgb(249, 249, 249),
+        inset 2px 2px 6px rgb(209, 209, 209);
+
+}
+.text-area
+{
+    position: relative;
+    min-height: 2px;
+  /*  padding-right: 15px;
+    padding-left:55px;
+    padding-top: 88px;**/
+    top: 100px;
+    left: 65px;
+    width: 40%;
+    float: left;
+
+}
+.container .text-area
+{
+    margin: 0;
+}
+.container .text-area .logo
+{
+    float: left;
+    height: auto;  
+}
+.container .text-area h2
+{
+    margin-bottom: 25px;
+    color:#220f9b;
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing:0.03em;
+    line-height:55px;
+ /*   font-family: 'Poppins', sans-serif;**/
+    font-family: 'open sans',sans-serif;
+
+}
+.container .text-area p
+{
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #8e8e8e;
+   /* font-family: 'Poppins',sans-serif;*/
+   font-family: 'open sans',sans-serif;
+
+
+}
+.container .text-btn
+{
+    position: absolute;
+    display: inline-block;
+    /*vertical-align: middle;*/
+    background: #1900b4;
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    border-radius: 12px;
+    padding: 25px 60px;
+    font-weight: 600;
+    font-family: 'open sans',sans-serif;
+    text-transform: uppercase;
+    -webkit-transition: all .3s ease;
+    transition: all .1s ease;
+    text-decoration: none;
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.1),
+                2px 2px 2px #1900b4;
+}
+.text-btn:hover
+{
+    transition: 0.2s;
+    color: #1900b4;
+    background: #f8f8f8;
+    box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.1),
+                  -4px -4px 6px white;
+}
+.text-btn:before
+{
+    position: absolute;
+    content: "";
+    box-shadow:inset 4px 4px 6px 0 rgba(0, 0, 0, 0.1),
+              inset -4px -4px 6px white;
+    width: 261px;
+    height: 100px;
+    overflow: hidden;
+    top: -15px;
+    left: -10px;
+    border-radius: 12px;
+    
+    
+}
+.form
+{
+    top: 22px;
+    position: relative;
+    width: 376px;
+    background: #f8f8f8;
+    left: 23%;
+    border-radius: 12px;
+    text-align: center;
+     border: 3px solid #fff;
+    box-shadow: -5px -5px 10px rgb(255,255,255), 5px 5px 10px rgba(230, 225, 225, 0.96);
+    float: left;
+}
+section .form
+{
+    margin: 0;
+}
+.container .form h3
+{
+  margin-bottom: 13px;
+    color:#1900b4;
+    font-family: 'open sans',sans-serif;
+    font-size: 25px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    line-height: 70px;  
+}
+.container .form .social-box 
+{
+   margin-left: 2px;
+
+}
+.container .form .social-box a
+{
+     display: inline-block;
+    vertical-align: middle;
+    font-size: 25px;
+    width: 58px;
+    height: 58px;
+    background: #f8f8f8;
+    box-shadow: -5px -5px 10px rgb(255,255,255), 5px 5px 10px rgba(230, 225, 225, 0.96);
+
+    text-align: center;
+    line-height: 60px;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    border-radius: 18px;
+    margin: 0px 14px;
+    align-items: center;
+}
+.container .form .social-box a:hover
+{
+    transition: .2s;
+    box-shadow: inset -2px -2px 6px rgb(249, 249, 249),
+        inset 2px 2px 6px rgb(209, 209, 209);
+    
+}
+.container .form .social-box a .fab
+{
+    text-align: center;
+    align-items: center;
+    color:rgb(21, 0, 152);
+}
+.container .form p
+{
+    align-items: center;
+    text-align: center;
+    margin-top: 24px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-size: 17px;
+    line-height: 20px;
+    color: #616161;
+}
+.container .form .input .inputBox input
+{  
+    width: 80%;
+    height: 55px;
+    text-align: center;
+    background: #f8f8f8;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 18px;
+    color: #1900b4;
+    box-shadow: inset -2px -2px 6px rgb(249, 249, 249),
+                inset 2px 2px 6px rgb(209, 209, 209);
+
+}
+.container .form .input
+{
+    text-align: center;
+    margin-top: 24px;
+}
+.container .form .input .inputBox
+{
+    margin-top: 20px;
+}
+.form .input .inputBox input[type="submit"] {
+    width: 55%;
+  margin-top: 10px;
+  background: #1900b4;
+  color: #f8f8f8;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  border-radius: 12px;
+  font-family: 'open sans',sans-serif;
+  font-weight: bold;
+    box-shadow:  -2px -2px 6px rgb(249, 249, 249),
+                 2px 2px 6px rgb(209, 209, 209);
+
+}
+.form .input .inputBox input[type="submit"]:active {
+    color: #1900b4;
+    background: #f8f8f8;
+    margin-top: 10px;
+        box-shadow: inset -5px -5px 10px rgb(255,255,255),
+                    inset 5px 5px 10px rgba(230, 225, 225, 0.96);
+}
+.container .form .login
+{
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.login a {
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+  font-family: 'open sans',sans-serif;
+  color: #1900b4;
+  font-size: 24px;
+}
+section .container .media-box
+{
+    display: block;
+    position:absolute;
+    top: 38rem;
+    left: 89px;
+    
+}
+.container .media-box .left-box 
+{
+    display: inline-block;
+    /*float: left;*/
+    position: relative;
+    display: -webkit-inline-box;
+}
+.media-box .left-box .btn2
+{
+    margin-left: 35px;
+  
+}
+.media-box .left-box .btn2 i
+{
+    position: relative;
+     display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background: #f8f8f8;
+   box-shadow: -5px -5px 10px rgb(255,255,255), 5px 5px 10px rgba(230, 225, 225, 0.96);
+  text-align: center;
+  line-height: 50px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-radius: 18px;
+  margin: 0px 14px;
+    top: -50px;
+    color: rgb(21, 0, 152);
+    border: 1px solid #fff;
+}
+.media-box .left-box .btn2 i:hover
+{
+    background:#220f9b;
+    color: #f1f1f1;
+    transition: 0.2s;
+}
+.media-box .left-box .btn2 span
+{
+    position: relative;
+     display: inline-block;
+    vertical-align: middle; 
+    font-size: 16px;
+    color: #ddd;
+    margin-top: -87px;
+}
+@media screen and (max-width: 1140px)
+{
+    .text-area
+    {
+        width: 80%;
+        left: 39px;
+    }
+    .container .text-btn
+    {
+        padding: 20px 40px;
+    }
+    .container .text-btn:before
+    {
+        display: none;
+    }
+
+    .form
+    {    left: 298px;
+        top: 200px;
+    }
+
+   
+    section .container .media-box
+    {
+    top: 74rem;
+    left: 240px;
+    }
+
+}
+
+@media screen and (max-width: 768px)
+{
+    .text-area
+    {
+        width: 80%;
+        left: 39px;
+    }
+
+    .container .text-btn
+    {
+        padding: 20px 40px;
+    }
+    .container .text-btn:before
+    {
+        display: none;
+    }
+    .form
+    {    left: 188px;
+        top: 200px;
+    }
+    section .container .media-box
+    {
+    top: 74rem;
+    left: 160px;
+    }
+
+}
+
+@media screen and (max-width: 599px)
+{  
+
+    .text-area
+    {
+        width: 80%;
+        left: 39px;
+    }
+
+    .container .text-btn
+    {
+        padding: 20px 40px;
+    }
+    .container .text-btn:before
+    {
+        display: none;
+    }
+    .form
+    {
+        left: 36px;
+        top: 200px;
+    }
+     section .container .media-box
+    {
+    top: 87rem;
+    left: -36px;
+    }
+    
+}
+
+@media only screen and (max-width: 414px)
+{
+    .container .text-area h2
+    {
+         font-size: 26px;
+        line-height: 35px;   
+    }
+    .text-area
+    {
+        width: 80%;
+        left: 39px;
+    }
+    .container .text-area p
+    {
+        font-size: 15px;
+    }
+    .container .text-btn
+    {
+        padding: 20px 40px;
+    }
+    .container .text-btn:before
+    {
+        display: none;
+    }
+    
+    .form
+    {
+        left: -5px;
+        top: 200px;
+    }
+    
+   .container .media-box 
+    {
+      left: 50rem;
+        
+    }
+    
+    section .container .media-box
+    {
+    top: 73rem;
+    left: -36px;
+    }
+    
+   .media-box .left-box .btn2 span
+   {
+       font-size: 14px;
+   }
+
+
+}
+
+@media only screen and (max-width: 375px)
+{
+    
+    .text-area
+    {
+        width: 80%;
+        left: 39px;
+    }
+
+    .container .text-btn
+    {
+        padding: 20px 40px;
+    }
+    .container .text-btn:before
+    {
+        display: none;
+    }
+
+    .form
+    {    left: 7px;
+        top: 200px;
+    }
+
+   
+    section .container .media-box
+    {
+    top: 74rem;
+    left: 2px;
+    }
+
+}
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+  <section>
+        <div class="container">
+            
+           <div class="logo">
+            <i class="fab fa-youtube"> Animation.Coding </i>
+          </div> 
+
+    <!------------TEXT Area ------------>  
+            <div class="text-area">
+                
+                  <h2>Help to Create a Professorial</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+                             accumsan</p>
+                  <a href="#" class="text-btn">Get Started</a>
+            </div>
+    <!---------END Text AREA ----------->
+          
+     <!--------- Form ----------->
+            <div class="form">
+                <h3>Create new account</h3>
+                <div class="social-box">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <p>or Sign Up with Email</p>
+
+                 <div class="input">
+                   <div class="inputBox">
+                     <input type="text" name="" placeholder="Email">
+                   </div>
+                   <div class="inputBox">
+                     <input type="password" name="" placeholder="">
+                   </div>
+                   <div class="inputBox">
+                     <input type="submit" name="" value="Sign In">
+                   </div>
+                 </div>
+
+                <p class="login">Already Have account?<a href="#">Login </a></p>
+            </div>
+    <!---------End Form ----------->
+
+    <!---------Box media---------------->
+              <div class="media-box">
+                <!---left-->
+                <div class="left-box">
+                  <div class="btn2"><i class="fab fa-facebook-f"></i><span>144,00 Follower</span></div>
+                  <div class="btn2"><i class="fab fa-dribbble"></i><span>234,00 Follower</span></div>
+                </div>    
+
+                 <!-----right---->
+                 <!---  <div class="right-box">
+                    <a href="#"><i class="fab fa-facebook-messenger"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-skype"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+
+               </div>------->
+
+                 <!----- <div class="box1"></div>
+                 <div class="box2"></div>
+                 <div class="box3"></div>
+                 <div class="box4"></div>
+                     ----->
+              </div>
+    <!---------End Box media---------------->
+        </div>
+  </section>
+</body>
+</html>
+
+
+
+
+<!----
+.container .form .input .inputBox input[type="submit"] {
+    width: 55%;
+  margin-top: 10px;
+  background: #1900b4;
+  color: #f8f8f8;
+    box-shadow:  -2px -2px 6px rgb(249, 249, 249),
+                 2px 2px 6px rgb(209, 209, 209);
+}
+
+.container .form .input .inputBox input[type="submit"]:hover
+{
+    color: #1900b4;
+    background: #f8f8f8;
+        box-shadow: -5px -5px 10px rgb(255,255,255), 5px 5px 10px rgba(230, 225, 225, 0.96);
+
+}*/---->
